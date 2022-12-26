@@ -12,6 +12,7 @@ class DemoApplicationTests {
 	void createNewAccountTest () {
 		final int testId = 3;
 		Email email = new Email("test@test.com");
+		email.checkEmailValidation();
 
 		Account account = new Account(testId, email);
 		System.out.println(account);
