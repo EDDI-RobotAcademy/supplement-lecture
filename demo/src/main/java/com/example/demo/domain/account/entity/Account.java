@@ -1,12 +1,14 @@
-package com.example.demo.account.entity;
+package com.example.demo.domain.account.entity;
 
-import com.example.demo.account.vo.Email;
+import com.example.demo.domain.common.vo.Email;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 // 엔티티 ? Entity란 무엇인가 ?
 // DB상에서 관리되어야 하는 Lifecycle이 존재하는 정보들
 // 이러한 객체를 전문 용어로 불변 객체 (Immutable Object)
 @RequiredArgsConstructor
+@ToString
 public class Account {
 
     // 수정을 못하게 만들기 위해 final을 붙였음
