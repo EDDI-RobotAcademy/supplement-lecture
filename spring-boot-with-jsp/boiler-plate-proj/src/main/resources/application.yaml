@@ -1,0 +1,9 @@
+
+server:
+  port: 7777
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
