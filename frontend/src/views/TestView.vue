@@ -6,10 +6,18 @@
         <h4>{{ list[num] }}</h4>
         <p>{{ buttonClickCount }} 번 클릭했습니다.</p>
         <button v-on:click="buttonClickIncrementHandler">카운트하기</button>
+
+        <!-- GlobalComponent.vue -->
+        <global-component :initial-test="counter"/>
     </div>
 </template>
 
 <script>
+
+import Vue from 'vue'
+import GlobalComponent from '@/components/GlobalComponent.vue'
+
+Vue.component(GlobalComponent.name, GlobalComponent)
 
 export default {
     name: "TestView",
@@ -19,6 +27,7 @@ export default {
             list: ['apple', 'banana', 'grape', 'strawberry'],
             num: 1,
             buttonClickCount: 0,
+            counter: 0,
         }
     },
     methods: {
