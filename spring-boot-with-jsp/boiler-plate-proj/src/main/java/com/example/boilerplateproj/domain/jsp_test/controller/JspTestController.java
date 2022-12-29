@@ -10,6 +10,7 @@ public class JspTestController {
 
     @GetMapping("/test")
     public String jsp_test () {
+        // log.debug는 디버깅 시점에만 출력됨
         log.info("Spring Boot with JSP!");
 
         return "jsp_test";
