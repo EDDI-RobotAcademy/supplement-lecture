@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.domain.board.controller;
 
+/*
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.service.BoardService;
 import org.springframework.stereotype.Controller;
@@ -79,3 +80,5 @@ public class BoardController {
 	}
 
 }
+
+ */

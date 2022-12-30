@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TestView from '@/views/TestView.vue'
+import DataSend2SpringTestView from '@/views/DataSend2SpringTestView.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/test',
     name: 'test',
     component: TestView
+  },
+  {
+    path: '/axiosDataSend2Spring',
+    name: 'axiosDataSend2Spring',
+    component: DataSend2SpringTestView
   },
 ]
 

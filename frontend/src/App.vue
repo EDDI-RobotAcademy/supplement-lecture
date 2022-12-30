@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/test">Test</router-link> |
-      <router-link to="/test">Other</router-link> |
+      <router-link to="/axiosDataSend2Spring">Vue에서 Spring으로 데이터 전송</router-link> |
       <router-link to="/test">이런식으로</router-link> |
     </nav>
     <router-view/>
