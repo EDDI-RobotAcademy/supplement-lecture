@@ -3,22 +3,22 @@ package com.example.boilerplateproj.domain.board.controller;
 /*
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.service.BoardService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequiredArgsConstructor
 @RequestMapping("/board")
 public class BoardController {
 
-	private final BoardService service;
+	@Autowired
+	private BoardService service;
 
 	@GetMapping("/register")
 	public void registerForm(Board board, Model model) throws Exception {

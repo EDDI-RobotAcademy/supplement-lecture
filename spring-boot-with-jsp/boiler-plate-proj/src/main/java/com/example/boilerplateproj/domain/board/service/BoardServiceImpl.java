@@ -7,17 +7,16 @@ import java.util.Optional;
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.repository.BoardRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import lombok.RequiredArgsConstructor;
-
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
-	private final BoardRepository boardRepository;
+	@Autowired
+	private BoardRepository boardRepository;
 
 	@Override
 	public void register(Board board) throws Exception {
