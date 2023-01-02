@@ -57,3 +57,12 @@ export default {
 }
 
 </script>
+
+<style>
+
+table {
+    width: 10%;
+    border: 2px solid #cccccc
+}
+
+</style>

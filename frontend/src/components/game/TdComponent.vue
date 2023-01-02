@@ -103,6 +103,8 @@ export default {
 
 <style>
 
-
+td {
+    border: 1px solid #cccccc
+}
 
 </style>
