@@ -6,7 +6,8 @@
             :cell-index="index"
             :row-index="rowIndex"
             :table-data="tableData"
-            :current-turn-shape="currentTurnShape"/>
+            :current-turn-shape="currentTurnShape"
+            @updateTurnShape="updateTurnShape"/>
     </tr>
 </template>
 
@@ -24,6 +25,13 @@ export default {
         rowIndex: Number,
         tableData: Array,
         currentTurnShape: String,
+    },
+    methods: {
+        updateTurnShape (passingValue) {
+            console.log('TrComponent received TdComponent info: ' + passingValue)
+            this.turnShape = passingValue
+            this.$emit('updateTurnShape', this.turnShape)
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <td @click="onClickTd">
+    <td @click="onClickTd" style="width: 30px; height: 30px;">
         {{ cellData }}
     </td>
 </template>
@@ -10,8 +10,10 @@ export default {
     name: "TdComponent",
     data () {
         return {
-            propsTurnShape: this.currentTurnShape,
-            propsWinner: '',
+            game: {
+                propsTurnShape: this.currentTurnShape,
+                propsWinner: '',
+            }
         }
     },
     props: {
@@ -23,9 +25,21 @@ export default {
     },
     methods: {
         onClickTd () {
-            this.$set(this.tableData[this.rowIndex], this.cellIndex, this.propsTurnShape)
+            console.log('게임판을 클릭했습니다!')
+            //this.$set(this.tableData[this.rowIndex], this.cellIndex, this.game.propsTurnShape)
+            this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
+
+            this.game.propsTurnShape = this.currentTurnShape === 'O' ? 'X' : 'O'
+            // 상위 컴포넌트로 정보를 전달 할 수 있음
+            this.$emit('updateTurnShape', this.game.propsTurnShape)
         }
     }
 }
 
 </script>
+
+<style>
+
+
+
+</style>
