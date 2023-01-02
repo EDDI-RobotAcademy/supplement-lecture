@@ -36,6 +36,21 @@ export default {
                 this.game.propsWinner = this.currentTurnShape
 
                 this.$emit('updateWinner', this.game.propsWinner)
+                this.$emit('updateTableData')
+            } else {
+                let allCellFull = true
+
+                this.tableData.forEach(row => {
+                    row.forEach(cell => {
+                        if (!cell) {
+                            allCellFull = false
+                        }
+                    })
+                });
+
+                if (allCellFull) {
+                    this.$emit('updateTableData')
+                }
             }
 
             this.game.propsTurnShape = this.currentTurnShape === 'O' ? 'X' : 'O'
@@ -78,6 +93,8 @@ export default {
             ) {
                 return true
             }
+
+            return false
         }
     }
 }

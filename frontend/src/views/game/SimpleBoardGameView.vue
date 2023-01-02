@@ -6,7 +6,8 @@
             :table-data="tableData"
             :current-turn-shape="currentTurnShape"
             @updateTurnShape="updateTurnShape"
-            @updateWinner="updateWinner"/>
+            @updateWinner="updateWinner"
+            @updateTableData="updateTableData"/>
         <!-- 누가 이겼는지 출력 -->
         <div v-if="winner">{{ winner }} 님의 승리!</div>
     </div>
@@ -42,6 +43,15 @@ export default {
         updateWinner (passingValue) {
             console.log('TrComponent received TdComponent winner info: ' + passingValue)
             this.winner = passingValue
+        },
+        updateTableData () {
+            this.tableData = [
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+            ]
         }
     }
 }
