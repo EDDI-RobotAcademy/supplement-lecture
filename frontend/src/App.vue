@@ -6,6 +6,7 @@
       <router-link to="/test">Test</router-link> |
       <router-link to="/axiosDataSend2Spring">Vue에서 Spring으로 데이터 전송</router-link> |
       <router-link to="/simple-board-game">보드 게임</router-link> |
+      <router-link to="/exercise1">연습 문제 1</router-link> |
     </nav>
     <router-view/>
   </div>

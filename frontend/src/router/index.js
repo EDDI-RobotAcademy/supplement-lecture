@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import TestView from '@/views/TestView.vue'
 import DataSend2SpringTestView from '@/views/DataSend2SpringTestView.vue'
 import SimpleBoardGameView from '@/views/game/SimpleBoardGameView.vue'
+import Exercise1View from '@/views/exercise/Exercise1View.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/simple-board-game',
     name: 'simpleBoardGame',
     component: SimpleBoardGameView
+  },
+  {
+    path: '/exercise1',
+    name: 'exercise1',
+    component: Exercise1View
   },
 ]
 
