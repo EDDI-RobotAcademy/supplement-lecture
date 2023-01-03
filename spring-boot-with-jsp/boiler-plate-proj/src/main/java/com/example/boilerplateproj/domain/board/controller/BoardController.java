@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.domain.board.controller;
 
+import com.example.boilerplateproj.domain.board.controller.request.BoardRequest;
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,10 +69,10 @@ public class BoardController {
 	}
 
 	@PostMapping("/modify")
-	public String modify(Board board, Model model) throws Exception {
+	public String modify(BoardRequest boardRequest, Model model) throws Exception {
 		log.info("modify");
 
-		service.modify(board, (int) board.getBoardNo());
+		service.modify(boardRequest, (int) 1);
 
 		model.addAttribute("msg", "수정이 완료되었습니다.");
 

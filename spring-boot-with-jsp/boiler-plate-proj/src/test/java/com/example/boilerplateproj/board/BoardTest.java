@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.board;
 
+import com.example.boilerplateproj.domain.board.controller.request.BoardRequest;
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.service.BoardService;
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,9 @@ public class BoardTest {
     }
 
     @Test
-    public void modifyTest () {
-        //
+    public void modifyTest () throws Exception {
+        final long TARGET_BOARD_NUMBER = 4;
+        BoardRequest boardRequest = new BoardRequest("제목을 바꿔", "내용도 바꿔");
+        service.modify(boardRequest, (int) TARGET_BOARD_NUMBER);
     }
 }

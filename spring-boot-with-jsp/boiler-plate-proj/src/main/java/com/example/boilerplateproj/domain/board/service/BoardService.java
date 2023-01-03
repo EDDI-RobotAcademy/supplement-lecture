@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.domain.board.service;
 
+import com.example.boilerplateproj.domain.board.controller.request.BoardRequest;
 import com.example.boilerplateproj.domain.board.entity.Board;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface BoardService {
 
 	public Board read(Integer boardNo) throws Exception;
 
-	public void modify(Board board, Integer boardNo) throws Exception;
+	public void modify(BoardRequest boardRequest, Integer boardNo) throws Exception;
 
 	public void remove(Integer boardNo) throws Exception;
 

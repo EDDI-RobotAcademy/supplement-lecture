@@ -3,6 +3,7 @@ package com.example.boilerplateproj.domain.board.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.boilerplateproj.domain.board.controller.request.BoardRequest;
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.repository.BoardRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -35,8 +36,19 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void modify(Board board, Integer boardNo) throws Exception {
-		boardRepository.save(board);
+	public void modify(BoardRequest boardRequest, Integer boardNo) throws Exception {
+		Optional<Board> maybeBoard = boardRepository.findById(Long.valueOf(boardNo));
+
+		if (maybeBoard.equals(Optional.empty())) {
+			log.info("Can't read board!!!");
+			return;
+		}
+
+		Board findedBoard = maybeBoard.get();
+		findedBoard.setTitle(boardRequest.getTitle());
+		findedBoard.setContent(boardRequest.getContent());
+
+		boardRepository.save(findedBoard);
 	}
 
 	@Override
