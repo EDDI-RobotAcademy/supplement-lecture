@@ -1,6 +1,5 @@
 package com.example.boilerplateproj.domain.board.service;
 
-/*
 import java.util.List;
 import java.util.Optional;
 
@@ -51,4 +50,3 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 }
-*/

@@ -23,4 +23,5 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: update
+      #ddl-auto: update
+      ddl-auto: create

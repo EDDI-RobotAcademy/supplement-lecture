@@ -1,6 +1,5 @@
 package com.example.boilerplateproj.domain.board.controller;
 
-/*
 import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +79,3 @@ public class BoardController {
 	}
 
 }
-
- */
