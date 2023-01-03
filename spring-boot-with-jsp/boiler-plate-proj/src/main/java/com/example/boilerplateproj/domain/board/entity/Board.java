@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 @Table(name="test_board")
+@NoArgsConstructor
 public class Board {
 
 	@Id

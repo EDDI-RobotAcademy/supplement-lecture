@@ -35,7 +35,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void modify(Board board) throws Exception {
+	public void modify(Board board, Integer boardNo) throws Exception {
 		boardRepository.save(board);
 	}
 

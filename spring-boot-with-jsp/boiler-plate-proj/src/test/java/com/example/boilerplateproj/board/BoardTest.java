@@ -9,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @SpringBootTest
 public class BoardTest {
@@ -26,5 +28,16 @@ public class BoardTest {
         // (content, reg_date, title, writer, board_no) values (?, ?, ?, ?, ?)
         Board board = new Board("제목3", "본문3", "작성자4");
         service.register(board);
+    }
+
+    @Test
+    public void findAllTest () throws Exception {
+        List<Board> boardLists = service.list();
+        System.out.println(boardLists);
+    }
+
+    @Test
+    public void modifyTest () {
+        //
     }
 }
