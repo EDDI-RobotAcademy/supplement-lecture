@@ -37,6 +37,12 @@ public class BoardTest {
     }
 
     @Test
+    public void findByEntityMemberField () throws Exception {
+        final long BOARD_NUMBER = 1;
+        System.out.println(service.read((int) BOARD_NUMBER));
+    }
+
+    @Test
     public void modifyTest () {
         //
     }

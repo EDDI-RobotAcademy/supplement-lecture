@@ -71,7 +71,7 @@ public class BoardController {
 	public String modify(Board board, Model model) throws Exception {
 		log.info("modify");
 
-		service.modify(board, board.getBoardNo());
+		service.modify(board, (int) board.getBoardNo());
 
 		model.addAttribute("msg", "수정이 완료되었습니다.");
 
