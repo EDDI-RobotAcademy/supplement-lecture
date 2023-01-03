@@ -26,7 +26,7 @@ public class BoardTest {
         // 그리고 알아서 Query를 생성해서 보내는 모습을 볼 수 있음
         // Hibernate: insert into test_board
         // (content, reg_date, title, writer, board_no) values (?, ?, ?, ?, ?)
-        Board board = new Board("제목3", "본문3", "작성자4");
+        Board board = new Board("제목5", "본문5", "작성자1223");
         service.register(board);
     }
 
@@ -40,6 +40,12 @@ public class BoardTest {
     public void findByEntityMemberField () throws Exception {
         final long BOARD_NUMBER = 1;
         System.out.println(service.read((int) BOARD_NUMBER));
+    }
+
+    @Test
+    public void deleteByEntityMemberField () throws Exception {
+        final long TARGET_BOARD_NUMBER = 3;
+        service.remove((int) TARGET_BOARD_NUMBER);
     }
 
     @Test
