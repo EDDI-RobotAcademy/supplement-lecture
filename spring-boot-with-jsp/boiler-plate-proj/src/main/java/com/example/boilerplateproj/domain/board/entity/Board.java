@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import com.sun.istack.NotNull;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 
@@ -19,6 +20,13 @@ public class Board {
 	private String title;
 	private String content;
 	private String writer;
+
+	@CreationTimestamp
 	private LocalDateTime regDate;
 
+	public Board(String title, String content, String writer) {
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
 }
