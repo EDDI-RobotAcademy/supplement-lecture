@@ -20,7 +20,8 @@ public class Board {
 	// 그러므로 이 정보를 Id (Identity)로 취급하겠음을 의미함
 	// GeneratedValue(자동 생성) - Sequence 귀찮게 일일히 안만듬
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_board_sequence_generator")
+	@SequenceGenerator(sequenceName = "test_board_sequence_generator", name = "test_board_sequence", allocationSize = 1)
 	private long boardNo;
 	private String title;
 	private String content;
