@@ -10,7 +10,17 @@ spring:
 
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:orcl
-    username: eddi
-    password: eddi123
+    #username: eddi
+    #password: eddi123
+    username: scott
+    password: tiger
     driver-class-name: oracle.jdbc.OracleDriver
     dialect: org.hibernate.dialect.Oracle10gDialect
+
+  jpa:
+    open-in-view: false
+    database: oracle
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
