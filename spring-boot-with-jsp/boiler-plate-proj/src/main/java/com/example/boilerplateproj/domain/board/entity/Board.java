@@ -12,9 +12,13 @@ import javax.persistence.*;
 @Entity
 @ToString
 @Table(name="test_board")
+// 디폴트 생성자
 @NoArgsConstructor
 public class Board {
 
+	// 모든 Entity는 자기 자신의 고유값을 가짐
+	// 그러므로 이 정보를 Id (Identity)로 취급하겠음을 의미함
+	// GeneratedValue(자동 생성) - Sequence 귀찮게 일일히 안만듬
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long boardNo;
