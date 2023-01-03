@@ -22,6 +22,7 @@ spring:
     database: oracle
     show-sql: true
     generate-ddl: true
+    database-platform: org.hibernate.dialect.Oracle10gDialect
     hibernate:
-      #ddl-auto: update
-      ddl-auto: create
+      ddl-auto: update
+      #ddl-auto: create

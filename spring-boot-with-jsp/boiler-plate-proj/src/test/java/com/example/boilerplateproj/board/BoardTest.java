@@ -2,15 +2,27 @@ package com.example.boilerplateproj.board;
 
 import com.example.boilerplateproj.domain.board.controller.request.BoardRequest;
 import com.example.boilerplateproj.domain.board.entity.Board;
+import com.example.boilerplateproj.domain.board.repository.BoardRepository;
 import com.example.boilerplateproj.domain.board.service.BoardService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +31,9 @@ public class BoardTest {
 
     @Autowired
     private BoardService service;
+
+    @Autowired
+    private BoardRepository repository;
 
     @Test
     public void writeTest () throws Exception {
@@ -54,5 +69,58 @@ public class BoardTest {
         final long TARGET_BOARD_NUMBER = 4;
         BoardRequest boardRequest = new BoardRequest("제목을 바꿔", "내용도 바꿔");
         service.modify(boardRequest, (int) TARGET_BOARD_NUMBER);
+    }
+
+    @Test
+    public void insert10() throws Exception {
+        for(int i = 0; i < 10; i++) {
+            Board board = new Board("제목" + i, "test", "tester");
+            service.register(board);
+        }
+    }
+
+    @Test
+    public void findByContent() {
+        repository.findBoardByContent("test")
+                .forEach(board -> System.out.println(board));
+    }
+
+    /*
+    @Test
+    public void testIdOrderByPaging() {
+        Pageable pageable = PageRequest.of(0, 5);
+        Collection<Board> boards = repository.findByBoardNoGreaterThanOrderByBoardNoDesc(0l, pageable);
+        boards.forEach(board -> System.out.println(board));
+    }
+
+    @Test
+    public void testPagingSort() {
+        Pageable pageable = PageRequest.of(0, 5, Sort.Direction.DESC, "id");
+        Page<Board> result = repository.findByIdGreaterThan(0L, pageable);
+
+        System.out.println("PAGE SIZE: " + result.getSize());
+        System.out.println("TOTAL PAGE: " + result.getTotalPages());
+        System.out.println("TOTAL COUNT: " + result.getTotalElements());
+        System.out.println("NEXT: " + result.nextPageable());
+
+        List<Board> list = result.getContent();
+    }
+
+    @DisplayName("간단한 페이징을 적용해본다.")
+    @Test
+    void usePagination() {
+        EntityManager entityManager = testEntityManager.getEntityManager();
+
+        List<Board> posts = entityManager.createQuery("select b from Board b", Board.class)
+                .setFirstResult(0)
+                .setMaxResults(5)
+                .getResultList();
+    }
+     */
+
+    @Test
+    void testPaging () {
+        List<Board> boardList = repository.findWithPagination(Pageable.ofSize(5));
+        System.out.println(boardList);
     }
 }
