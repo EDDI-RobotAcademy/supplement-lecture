@@ -67,7 +67,7 @@ public class BoardTest {
     @Test
     public void modifyTest () throws Exception {
         final long TARGET_BOARD_NUMBER = 4;
-        BoardRequest boardRequest = new BoardRequest("제목을 바꿔", "내용도 바꿔");
+        BoardRequest boardRequest = new BoardRequest(TARGET_BOARD_NUMBER, "제목을 바꿔", "내용도 바꿔");
         service.modify(boardRequest, (int) TARGET_BOARD_NUMBER);
     }
 
