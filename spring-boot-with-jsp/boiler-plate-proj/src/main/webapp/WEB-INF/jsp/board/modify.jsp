@@ -40,7 +40,7 @@
 			</tr>
 			<tr>
 				<td>Writer</td>
-				<td><form:input path="writer" /></td>
+				<td><form:input path="writer" readonly="true"/></td>
 				<td><font color="red"><form:errors path="writer" /></font></td>
 			</tr>
 			<tr>
