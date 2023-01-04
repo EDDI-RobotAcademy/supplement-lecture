@@ -80,8 +80,18 @@ public class BoardTest {
     }
 
     @Test
-    public void findByContent() {
+    public void findByContent () {
         repository.findBoardByContent("test")
+                .forEach(board -> System.out.println(board));
+    }
+
+    @Test
+    public void findByWriter () {
+        // select ... select ... select ... select ... select ...
+        // select ... ...........................................
+        // select ...............................................
+        // select ...............................................
+        repository.findBoardByWriter("작성자1223")
                 .forEach(board -> System.out.println(board));
     }
 

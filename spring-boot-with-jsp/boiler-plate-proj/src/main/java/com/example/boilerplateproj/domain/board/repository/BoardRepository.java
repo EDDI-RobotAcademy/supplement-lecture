@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
     List<Board> findBoardByContent(String content);
+    List<Board> findBoardByWriter(String writer);
     // id > ? ORDER BY id DESC limit ?, ?
     //List<Board> findByBoardNoGreaterThanOrderByBoardNoDesc(Long boardNo, Pageable paging);
     // id > ? limit ?, ?
