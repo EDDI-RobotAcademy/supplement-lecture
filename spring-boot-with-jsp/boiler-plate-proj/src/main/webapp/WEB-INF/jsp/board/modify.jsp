@@ -30,7 +30,7 @@
 	<h2>MODIFY</h2>
 	
 	<form:form modelAttribute="board" action="modify">
-		<form:hidden path="boardNo" />
+		<form:hidden path="id" />
 	
 		<table>
 			<tr>

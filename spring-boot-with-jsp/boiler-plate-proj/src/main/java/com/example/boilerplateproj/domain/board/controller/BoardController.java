@@ -53,10 +53,10 @@ public class BoardController {
 	}
 
 	@PostMapping("/remove")
-	public String remove(int boardNo, Model model) throws Exception {
+	public String remove(int id, Model model) throws Exception {
 		log.info("remove");
 
-		service.remove(boardNo);
+		service.remove(id);
 
 		model.addAttribute("msg", "삭제가 완료되었습니다.");
 

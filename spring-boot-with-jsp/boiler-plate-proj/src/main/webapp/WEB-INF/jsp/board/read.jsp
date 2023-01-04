@@ -16,8 +16,8 @@
 		console.log(formObj);
 
 		$("#btnEdit").on("click", function() {
-			var boardNo = $("#boardNo");
-			var boardNoVal = boardNo.val();
+			var boardNo = $("#id");
+			var boardNoVal = parseInt(boardNo.val());
 			
 			self.location = "/board/modify?boardNo=" + boardNoVal;
 		});
@@ -38,7 +38,7 @@
 	<h2>READ</h2>
 	
 	<form:form modelAttribute="board">
-		<form:hidden path="boardNo" />
+		<form:hidden path="id" />
 	
 		<table>
 			<tr>
