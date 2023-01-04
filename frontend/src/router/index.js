@@ -6,6 +6,8 @@ import DataSend2SpringTestView from '@/views/DataSend2SpringTestView.vue'
 import SimpleBoardGameView from '@/views/game/SimpleBoardGameView.vue'
 import Exercise1View from '@/views/exercise/Exercise1View.vue'
 
+import FileUploadView from "@/views/file/FileUploadView";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,6 +43,11 @@ const routes = [
     path: '/exercise1',
     name: 'exercise1',
     component: Exercise1View
+  },
+  {
+    path: '/file-upload-test',
+    name: 'FileUploadTest',
+    component: FileUploadView
   },
 ]
 
