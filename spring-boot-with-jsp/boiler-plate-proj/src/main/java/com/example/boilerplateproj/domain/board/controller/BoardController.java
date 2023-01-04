@@ -65,16 +65,16 @@ public class BoardController {
 
 	@GetMapping("/modify")
 	public void modifyForm(int boardNo, Model model) throws Exception {
-		log.info("modifyForm");
+		log.info("modifyForm: " + boardNo);
 
 		model.addAttribute(service.read(boardNo));
 	}
 
 	@PostMapping("/modify")
 	public String modify(BoardRequest boardRequest, Model model) throws Exception {
-		log.info("modify");
+		log.info("modify: " + boardRequest);
 
-		service.modify(boardRequest, (int) 1);
+		service.modify(boardRequest, Math.toIntExact(boardRequest.getId()));
 
 		model.addAttribute("msg", "수정이 완료되었습니다.");
 
