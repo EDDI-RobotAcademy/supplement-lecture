@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @ToString
-//@Table(name="board")
+@Table(name="board_test")
 // 디폴트 생성자
 @NoArgsConstructor
 public class Board {
@@ -20,10 +20,10 @@ public class Board {
 	// 그러므로 이 정보를 Id (Identity)로 취급하겠음을 의미함
 	// GeneratedValue(자동 생성) - Sequence 귀찮게 일일히 안만듬
 	@Id
-	@GeneratedValue
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_board_seq_gen")
-	//@SequenceGenerator(sequenceName = "test_board_seq", name = "test_board_seq_gen", allocationSize = 1)
-	//@Column(name = "id")
+	//@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_board_seq_gen")
+	@SequenceGenerator(sequenceName = "test_board_seq", name = "test_board_seq_gen", allocationSize = 1)
+	@Column(name = "id")
 	private Long id;
 	private String title;
 	private String content;

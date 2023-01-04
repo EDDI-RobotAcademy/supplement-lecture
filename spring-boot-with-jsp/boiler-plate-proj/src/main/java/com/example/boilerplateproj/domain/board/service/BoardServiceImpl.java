@@ -58,7 +58,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<Board> list() throws Exception {
-		return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "boardNo"));
+		return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 	}
 
 }
