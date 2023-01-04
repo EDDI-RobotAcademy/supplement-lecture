@@ -37,10 +37,12 @@ public class BoardController {
 	}
 
 	@GetMapping("/list")
-	public void list(Model model) throws Exception {
+	public String list(Model model) throws Exception {
 		log.info("list");
 
 		model.addAttribute("list", service.list());
+
+		return "board/list";
 	}
 
 	@GetMapping("/read")

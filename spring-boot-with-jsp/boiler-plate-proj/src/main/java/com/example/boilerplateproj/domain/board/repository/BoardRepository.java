@@ -12,9 +12,11 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     List<Board> findBoardByContent(String content);
     List<Board> findBoardByWriter(String writer);
     // id > ? ORDER BY id DESC limit ?, ?
-    //List<Board> findByBoardNoGreaterThanOrderByBoardNoDesc(Long boardNo, Pageable paging);
+    List<Board> findByIdGreaterThanOrderByIdDesc(Long boardNo, Pageable paging);
     // id > ? limit ?, ?
-    //Page<Board> findByIdGreaterThan(Long id, Pageable paging);
+    List<Board> findByIdLessThanOrderByIdDesc(Long boardNo, Pageable paging);
+    // id < ? limit ?, ?
+    Page<Board> findByIdGreaterThan(Long boardNo, Pageable paging);
 
     //@Query(value = "select * from board b where b.username like %?1%", nativeQuery = true)
     //List<Board> findBoardByUsername(String username);

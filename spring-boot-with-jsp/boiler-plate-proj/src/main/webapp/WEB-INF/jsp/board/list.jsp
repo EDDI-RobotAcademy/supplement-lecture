@@ -29,8 +29,8 @@
 		<c:otherwise>
 			<c:forEach items="${list}" var="board">
 				<tr>
-					<td align="center">${board.boardNo}</td>
-					<td align="left"><a href="/board/read?boardNo=${board.boardNo}">${board.title}</a></td>
+					<td align="center">${board.id}</td>
+					<td align="left"><a href="/board/read?boardNo=${board.id}">${board.title}</a></td>
 					<td align="right">${board.writer}</td>
 					<td align="center"><javatime:format value="${board.regDate}" pattern="yyyy-MM-dd HH:mm" /></td>
 				</tr>

@@ -91,21 +91,27 @@ public class BoardTest {
         // select ... ...........................................
         // select ...............................................
         // select ...............................................
-        repository.findBoardByWriter("작성자1223")
+        repository.findBoardByWriter("tester")
                 .forEach(board -> System.out.println(board));
     }
 
-    /*
     @Test
     public void testIdOrderByPaging() {
+        Pageable pageable = PageRequest.of(2, 5);
+        Collection<Board> boards = repository.findByIdGreaterThanOrderByIdDesc(0L, pageable);
+        boards.forEach(board -> System.out.println(board));
+    }
+
+    @Test
+    public void testIdOrderByPaging2() {
         Pageable pageable = PageRequest.of(0, 5);
-        Collection<Board> boards = repository.findByBoardNoGreaterThanOrderByBoardNoDesc(0l, pageable);
+        Collection<Board> boards = repository.findByIdLessThanOrderByIdDesc(6L, pageable);
         boards.forEach(board -> System.out.println(board));
     }
 
     @Test
     public void testPagingSort() {
-        Pageable pageable = PageRequest.of(0, 5, Sort.Direction.DESC, "id");
+        Pageable pageable = PageRequest.of(1, 5, Sort.Direction.DESC, "id");
         Page<Board> result = repository.findByIdGreaterThan(0L, pageable);
 
         System.out.println("PAGE SIZE: " + result.getSize());
@@ -113,9 +119,11 @@ public class BoardTest {
         System.out.println("TOTAL COUNT: " + result.getTotalElements());
         System.out.println("NEXT: " + result.nextPageable());
 
-        List<Board> list = result.getContent();
+        List<Board> boardsList = result.getContent();
+        boardsList.forEach(board -> System.out.println(board));
     }
 
+    /*
     @DisplayName("간단한 페이징을 적용해본다.")
     @Test
     void usePagination() {

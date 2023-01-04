@@ -1,6 +1,10 @@
 
 server:
   port: 7777
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
 
 spring:
   mvc:
