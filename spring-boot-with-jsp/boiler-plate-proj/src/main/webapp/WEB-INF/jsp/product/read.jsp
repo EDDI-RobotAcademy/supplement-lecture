@@ -19,7 +19,7 @@
 			var productId = $("#id");
 			var productIdValue = parseInt(productId.val());
 			
-			self.location = "/product/modify?boardNo=" + productIdValue;
+			self.location = "/product/modify?productId=" + productIdValue;
 		});
 
 		$("#btnRemove").on("click", function() {
