@@ -11,16 +11,16 @@
 <script>
 	$(document).ready(function() {
 
-		var formObj = $("#board");
+		var formObj = $("#product");
 
 		$("#btnRegister").on("click", function() {
-			formObj.attr("action", "/board/register");
+			formObj.attr("action", "/product/register");
 			formObj.attr("method", "post");
 			formObj.submit();
 		});
 
 		$("#btnList").on("click", function() {
-			self.location = "/board/list";
+			self.location = "/product/list";
 		});
 
 	});
@@ -29,22 +29,22 @@
 <body>
 	<h2>REGISTER</h2>
 
-	<form:form modelAttribute="board" action="register">
+	<form:form modelAttribute="product" action="register">
 		<table>
 			<tr>
-				<td>Title</td>
-				<td><form:input path="title" /></td>
-				<td><font color="red"><form:errors path="title" /></font></td>
+				<td>상품명</td>
+				<td><form:input path="name" /></td>
+				<td><font color="red"><form:errors path="name" /></font></td>
 			</tr>
 			<tr>
-				<td>Writer</td>
-				<td><form:input path="writer" /></td>
-				<td><font color="red"><form:errors path="writer" /></font></td>
+				<td>가격</td>
+				<td><form:input path="price" /></td>
+				<td><font color="red"><form:errors path="price" /></font></td>
 			</tr>
 			<tr>
-				<td>Content</td>
-				<td><form:textarea path="content" /></td>
-				<td><font color="red"><form:errors path="content" /></font></td>
+				<td>상품 세부 정보</td>
+				<td><form:textarea path="description" /></td>
+				<td><font color="red"><form:errors path="description" /></font></td>
 			</tr>
 		</table>
 	</form:form>

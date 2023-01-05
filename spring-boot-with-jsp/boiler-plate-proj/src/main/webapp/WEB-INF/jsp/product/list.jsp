@@ -32,7 +32,7 @@
 					<td align="center">${product.id}</td>
 					<td align="left"><a href="/product/read?productId=${product.id}">${product.name}</a></td>
 					<td align="right">${product.price}</td>
-					<td align="center"><javatime:format value="${product.regDate}" pattern="yyyy-MM-dd HH:mm" /></td>
+					<td align="center"><javatime:format value="${product.createdTime}" pattern="yyyy-MM-dd HH:mm" /></td>
 				</tr>
 			</c:forEach>
 		</c:otherwise>
