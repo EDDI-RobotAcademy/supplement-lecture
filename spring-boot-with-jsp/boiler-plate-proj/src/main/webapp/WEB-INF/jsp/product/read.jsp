@@ -11,24 +11,24 @@
 <script>
 	$(document).ready(function() {
 
-		var formObj = $("#board");
+		var formObj = $("#product");
 
 		console.log(formObj);
 
 		$("#btnEdit").on("click", function() {
-			var boardNo = $("#id");
-			var boardNoVal = parseInt(boardNo.val());
+			var productId = $("#id");
+			var productIdValue = parseInt(productId.val());
 			
-			self.location = "/board/modify?boardNo=" + boardNoVal;
+			self.location = "/product/modify?boardNo=" + productIdValue;
 		});
 
 		$("#btnRemove").on("click", function() {
-			formObj.attr("action", "/board/remove");
+			formObj.attr("action", "/product/remove");
 			formObj.submit();
 		});
 
 		$("#btnList").on("click", function() {
-			self.location = "/board/list";
+			self.location = "/product/list";
 		});
 
 	});
@@ -37,21 +37,21 @@
 <body>
 	<h2>READ</h2>
 	
-	<form:form modelAttribute="board">
+	<form:form modelAttribute="product">
 		<form:hidden path="id" />
 	
 		<table>
 			<tr>
-				<td>Title</td>
-				<td><form:input path="title" readonly="true" /></td>
+				<td>상품명</td>
+				<td><form:input path="name" readonly="true" /></td>
 			</tr>
 			<tr>
-				<td>Writer</td>
-				<td><form:input path="writer" readonly="true" /></td>
+				<td>가격</td>
+				<td><form:input path="price" readonly="true" /></td>
 			</tr>
 			<tr>
-				<td>Content</td>
-				<td><form:textarea path="content" readonly="true" /></td>
+				<td>상품 세부 정보</td>
+				<td><form:textarea path="description" readonly="true" /></td>
 			</tr>
 		</table>
 	
