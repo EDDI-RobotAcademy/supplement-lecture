@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ProductRequest {
 
+    private int id;
     private String name;
     private String description;
     private Long price;
