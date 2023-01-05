@@ -8,6 +8,11 @@ import Exercise1View from '@/views/exercise/Exercise1View.vue'
 
 import FileUploadView from "@/views/file/FileUploadView";
 
+import JpaBoardListView from "@/views/boards/JpaBoardListView";
+import JpaBoardRegisterView from "@/views/boards/JpaBoardRegisterView";
+import JpaBoardReadView from "@/views/boards/JpaBoardReadView";
+import JpaBoardModifyView from "@/views/boards/JpaBoardModifyView";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -48,6 +53,36 @@ const routes = [
     path: '/file-upload-test',
     name: 'FileUploadTest',
     component: FileUploadView
+  },
+  {
+    path: '/board-list',
+    name: 'JpaBoardListView',
+    component: JpaBoardListView
+  },
+  {
+    path: '/board-register',
+    name: 'JpaBoardRegisterView',
+    component: JpaBoardRegisterView
+  },
+  {
+    path: '/board-read/:boardNo',
+    name: 'JpaBoardReadView',
+    components: {
+      default: JpaBoardReadView
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/board-modify/:boardNo',
+    name: 'JpaBoardModifyView',
+    components: {
+      default: JpaBoardModifyView
+    },
+    props: {
+      default: true
+    }
   },
 ]
 

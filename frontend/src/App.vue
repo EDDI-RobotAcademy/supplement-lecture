@@ -8,6 +8,7 @@
       <router-link to="/simple-board-game">보드 게임</router-link> |
       <router-link to="/exercise1">연습 문제 1</router-link> |
       <router-link to="/file-upload-test">파일 업로드 테스트</router-link><br/>
+      <router-link to="/board-list">Vue 게시판</router-link> |
     </nav>
     <router-view/>
   </div>
