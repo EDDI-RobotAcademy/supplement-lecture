@@ -28,10 +28,10 @@ public class ProductController {
     }
 
     @PostMapping("/register")
-    public String register(ProductRequest productRequest, Model model) throws Exception {
+    public String register(Product product, Model model) throws Exception {
         log.info("register");
 
-        service.registerProduct(productRequest);
+        service.registerProduct(product);
 
         model.addAttribute("msg", "등록이 완료되었습니다.");
 

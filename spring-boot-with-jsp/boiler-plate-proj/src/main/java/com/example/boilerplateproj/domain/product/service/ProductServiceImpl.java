@@ -1,6 +1,5 @@
 package com.example.boilerplateproj.domain.product.service;
 
-import com.example.boilerplateproj.domain.board.entity.Board;
 import com.example.boilerplateproj.domain.product.controller.request.ProductRequest;
 import com.example.boilerplateproj.domain.product.entity.Product;
 import com.example.boilerplateproj.domain.product.repository.ProductRepository;
@@ -18,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository repository;
 
     @Override
-    public void registerProduct(ProductRequest productRequest) {
+    public void registerProduct(Product productRequest) {
         Product product = new Product(
                 productRequest.getName(),
                 productRequest.getDescription(),

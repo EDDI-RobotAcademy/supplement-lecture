@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService {
 
     // registerProduct -> 상품명, 상품 설명, 가격
-    public void registerProduct (ProductRequest productRequest);
+    public void registerProduct (Product product);
     // viewProduct
     public Product viewProduct (Long id);
     // modifyProduct
