@@ -55,10 +55,10 @@ public class ProductController {
     }
 
     @PostMapping("/remove")
-    public String remove(int productId, Model model) throws Exception {
+    public String remove(int id, Model model) throws Exception {
         log.info("remove");
 
-        service.deleteProduct((long) productId);
+        service.deleteProduct((long) id);
 
         model.addAttribute("msg", "삭제가 완료되었습니다.");
 
