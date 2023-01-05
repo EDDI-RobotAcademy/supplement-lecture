@@ -15,10 +15,10 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:orcl
     #url: jdbc:mysql://localhost:3306/jpa_test_db?allowpublickeyretrieval=true&usessl=false&serverTimezone=UTC
-    username: eddi
-    password: eddi123
-    #username: scott
-    #password: tiger
+    #username: eddi
+    #password: eddi123
+    username: scott
+    password: tiger
     driver-class-name: oracle.jdbc.OracleDriver
     dialect: org.hibernate.dialect.Oracle10gDialect
     #driver-class-name: com.mysql.cj.jdbc.Driver

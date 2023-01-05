@@ -5,17 +5,17 @@
 
 <html>
 <head>
-	<title>Board</title>
+	<title>Product</title>
 </head>
 <body>
 	<h2>List</h2>
 	<a href="register">New</a>
 	<table border="1">
 		<tr>
-			<th align="center" width="80">NO</th>
-			<th align="center" width="320">TITLE</th>
-			<th align="center" width="100">WRITER</th>
-			<th align="center" width="180">REGDATE</th>
+			<th align="center" width="80">상품 번호</th>
+			<th align="center" width="320">상품명</th>
+			<th align="center" width="100">가격</th>
+			<th align="center" width="180">등록일자</th>
 		</tr>
 		
 	<c:choose>
@@ -27,12 +27,12 @@
 			</tr>
 		</c:when>
 		<c:otherwise>
-			<c:forEach items="${list}" var="board">
+			<c:forEach items="${list}" var="product">
 				<tr>
-					<td align="center">${board.id}</td>
-					<td align="left"><a href="/board/read?boardNo=${board.id}">${board.title}</a></td>
-					<td align="right">${board.writer}</td>
-					<td align="center"><javatime:format value="${board.regDate}" pattern="yyyy-MM-dd HH:mm" /></td>
+					<td align="center">${product.id}</td>
+					<td align="left"><a href="/product/read?productId=${product.id}">${product.name}</a></td>
+					<td align="right">${product.price}</td>
+					<td align="center"><javatime:format value="${product.regDate}" pattern="yyyy-MM-dd HH:mm" /></td>
 				</tr>
 			</c:forEach>
 		</c:otherwise>
