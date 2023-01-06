@@ -66,6 +66,7 @@ export default {
 
         const { title, content, boardNo, writer, regDate } = payload
 
+        // 변수를 URL과 연결하여 처리 할 때는 백틱이라는 ESC키 아래쪽에 있는 '`' 녀석을 사용합니다.
         return axios.put(`http://localhost:7777/39th/jpa/board/${boardNo}`,
             { title, content, writer, regDate })
             .then(() => {

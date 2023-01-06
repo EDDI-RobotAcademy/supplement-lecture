@@ -65,6 +65,7 @@ const routes = [
     component: JpaBoardRegisterView
   },
   {
+    // vue router에서 가변 인자는 아래와 같이 :boardNo 형태로 작성
     path: '/board-read/:boardNo',
     name: 'JpaBoardReadView',
     components: {
