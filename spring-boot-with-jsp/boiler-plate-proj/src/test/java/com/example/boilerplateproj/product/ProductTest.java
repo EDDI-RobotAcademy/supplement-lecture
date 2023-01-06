@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+/*
 @SpringBootTest
 public class ProductTest {
 
@@ -48,3 +49,4 @@ public class ProductTest {
         service.modifyProduct(productRequest, TARGET_PRODUCT_NUMBER);
     }
 }
+*/

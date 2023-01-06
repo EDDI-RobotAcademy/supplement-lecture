@@ -11,7 +11,8 @@ import java.util.Date;
 @Entity
 public class VueBoard {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vue_board_seq_gen")
+    @SequenceGenerator(sequenceName = "vue_board_seq", name = "vue_board_seq_gen", allocationSize = 1)
     private Long boardNo;
 
     @Column(length = 128, nullable = false)

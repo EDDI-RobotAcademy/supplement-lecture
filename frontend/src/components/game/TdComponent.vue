@@ -101,7 +101,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 td {
     border: 1px solid #cccccc

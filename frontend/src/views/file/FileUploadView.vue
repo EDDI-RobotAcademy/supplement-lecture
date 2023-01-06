@@ -70,10 +70,12 @@ export default {
         test: "test"
       }
 
+      // 사진들 처리 파트
       for (let idx = 0; idx < this.files2.length; idx++) {
         formData.append('fileList', this.files2[idx])
       }
 
+      // 글자 처리
       formData.append(
           "info",
           new Blob([JSON.stringify(fileinfo)], { type: "application/json" })
