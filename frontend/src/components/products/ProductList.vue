@@ -38,7 +38,7 @@
 export default {
   name: "ProductList",
   props: {
-    boards: {
+    products: {
       type: Array
     }
   }

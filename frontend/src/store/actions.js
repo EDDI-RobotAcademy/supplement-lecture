@@ -2,6 +2,7 @@ import {
     REQUEST_BOARD_LIST_FROM_SPRING,
     REQUEST_BOARD_FROM_SPRING,
     REQUEST_PRODUCT_LIST_TO_SPRING,
+    REQUEST_PRODUCT_TO_SPRING,
 } from './mutation-types'
 
 // npm install axios --save-dev
@@ -77,9 +78,40 @@ export default {
     requestProductListToSpring ({ commit }) {
         console.log('requestProductListToSpring()')
 
-        return axios.get('http://localhost:7777/product/list')
+        return axios.get('http://localhost:7777/vue-product/list')
             .then((res) => {
                 commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+            })
+    },
+    // eslint-disable-next-line no-empty-pattern
+    requestCreateProductContentsToSpring ({ }, payload) {
+        console.log('requestCreateProductContentsToSpring()')
+
+        const { name, price, description } = payload
+        return axios.post('http://localhost:7777/vue-product/register',
+            { name, price, description })
+            .then(() => {
+                alert('게시물 등록 성공')
+            })
+    },
+    requestProductToSpring ({ commit }, id) {
+        console.log('requestProductToSpring()')
+
+        return axios.get(`http://localhost:7777/vue-product/${id}`)
+            .then((res) => {
+                commit(REQUEST_PRODUCT_TO_SPRING, res.data)
+            })
+    },
+    // eslint-disable-next-line no-empty-pattern
+    requestProductModifyToSpring ({ }, payload) {
+        console.log('requestProductModifyToSpring()')
+
+        const { id, name, description, price } = payload
+
+        return axios.put(`http://localhost:7777/vue-product/${id}`,
+            { name, price, description })
+            .then(() => {
+                alert('수정 성공')
             })
     },
 }

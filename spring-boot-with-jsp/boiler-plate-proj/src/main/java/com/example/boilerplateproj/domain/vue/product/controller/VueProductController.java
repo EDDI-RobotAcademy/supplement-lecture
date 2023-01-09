@@ -3,36 +3,32 @@ package com.example.boilerplateproj.domain.vue.product.controller;
 import com.example.boilerplateproj.domain.product.controller.request.ProductRequest;
 import com.example.boilerplateproj.domain.product.entity.Product;
 import com.example.boilerplateproj.domain.product.service.ProductService;
+import com.example.boilerplateproj.domain.vue.board.entity.VueBoard;
+import com.example.boilerplateproj.domain.vue.product.controller.request.VueProductRequest;
 import com.example.boilerplateproj.domain.vue.product.entity.VueProduct;
 import com.example.boilerplateproj.domain.vue.product.service.VueProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
 @RestController
 @RequestMapping("/vue-product")
+@CrossOrigin(origins = "http://localhost:8081", allowedHeaders = "*")
 public class VueProductController {
 
     @Autowired
     private VueProductService service;
 
     @PostMapping("/register")
-    public String register(VueProduct product, Model model) throws Exception {
-        log.info("register");
+    public void register(@RequestBody VueProductRequest productRequest) throws Exception {
+        log.info("register: " + productRequest);
 
-        service.registerProduct(product);
-
-        model.addAttribute("msg", "등록이 완료되었습니다.");
-
-        return "product/success";
+        service.registerProduct(productRequest);
     }
 
     @GetMapping("/list")
@@ -42,11 +38,11 @@ public class VueProductController {
         return service.viewAllProduct();
     }
 
-    @GetMapping("/read")
-    public void read(int productId, Model model) throws Exception {
+    @GetMapping("/{id}")
+    public VueProduct read(@PathVariable("id") int id) throws Exception {
         log.info("read");
 
-        model.addAttribute(service.viewProduct((long) productId));
+        return service.viewProduct((long) id);
     }
 
     @PostMapping("/remove")
@@ -60,22 +56,11 @@ public class VueProductController {
         return "product/success";
     }
 
-    @GetMapping("/modify")
-    public void modifyForm(int productId, Model model) throws Exception {
-        log.info("modifyForm: " + productId);
+    @PutMapping("/{id}")
+    public void modifyForm(@PathVariable("id") int id,
+                           @RequestBody VueProductRequest productRequest) throws Exception {
+        log.info("modifyForm: " + id);
 
-        model.addAttribute(service.viewProduct((long) productId));
+        service.modifyProduct(productRequest, (long) id);
     }
-
-    @PostMapping("/modify")
-    public String modify(ProductRequest productRequest, Model model) throws Exception {
-        log.info("modify: " + productRequest);
-
-        service.modifyProduct(productRequest, (long) Math.toIntExact(productRequest.getId()));
-
-        model.addAttribute("msg", "수정이 완료되었습니다.");
-
-        return "product/success";
-    }
-
 }

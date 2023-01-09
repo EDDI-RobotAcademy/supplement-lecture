@@ -14,6 +14,9 @@ import JpaBoardReadView from "@/views/boards/JpaBoardReadView"
 import JpaBoardModifyView from "@/views/boards/JpaBoardModifyView"
 
 import ProductListView from "@/views/products/ProductListView"
+import ProductRegisterView from "@/views/products/ProductRegisterView"
+import ProductReadView from "@/views/products/ProductReadView"
+import ProductModifyView from "@/views/products/ProductModifyView"
 
 Vue.use(VueRouter)
 
@@ -91,6 +94,31 @@ const routes = [
     path: '/product-list',
     name: 'ProductListView',
     component: ProductListView
+  },
+  {
+    path: '/product-register',
+    name: 'ProductRegisterView',
+    component: ProductRegisterView
+  },
+  {
+    path: '/product-read/:id',
+    name: 'ProductReadView',
+    components: {
+      default: ProductReadView
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product-modify/:id',
+    name: 'ProductModifyView',
+    components: {
+      default: ProductModifyView
+    },
+    props: {
+      default: true
+    }
   },
 
   

@@ -1,9 +1,7 @@
 package com.example.boilerplateproj.domain.vue.product.service;
 
 import com.example.boilerplateproj.domain.product.controller.request.ProductRequest;
-import com.example.boilerplateproj.domain.product.entity.Product;
-import com.example.boilerplateproj.domain.product.repository.ProductRepository;
-import com.example.boilerplateproj.domain.product.service.ProductService;
+import com.example.boilerplateproj.domain.vue.product.controller.request.VueProductRequest;
 import com.example.boilerplateproj.domain.vue.product.entity.VueProduct;
 import com.example.boilerplateproj.domain.vue.product.repository.VueProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +18,11 @@ public class VueProductServiceImpl implements VueProductService {
     private VueProductRepository repository;
 
     @Override
-    public void registerProduct(VueProduct productRequest) {
+    public void registerProduct(VueProductRequest productRequest) {
         VueProduct product = new VueProduct(
                 productRequest.getName(),
                 productRequest.getDescription(),
-                productRequest.getPrice()
+                Long.parseLong(productRequest.getPrice())
         );
 
         repository.save(product);
@@ -42,7 +40,7 @@ public class VueProductServiceImpl implements VueProductService {
     }
 
     @Override
-    public VueProduct modifyProduct(ProductRequest productRequest, Long id) {
+    public VueProduct modifyProduct(VueProductRequest productRequest, Long id) {
         Optional<VueProduct> maybeProduct = repository.findById(id);
 
         if (maybeProduct.equals(Optional.empty())) {
@@ -52,7 +50,7 @@ public class VueProductServiceImpl implements VueProductService {
         VueProduct findedProduct = maybeProduct.get();
         findedProduct.setName(productRequest.getName());
         findedProduct.setDescription(productRequest.getDescription());
-        findedProduct.setPrice(productRequest.getPrice());
+        findedProduct.setPrice(Long.parseLong(productRequest.getPrice()));
 
         repository.save(findedProduct);
 
