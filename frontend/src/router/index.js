@@ -6,12 +6,14 @@ import DataSend2SpringTestView from '@/views/DataSend2SpringTestView.vue'
 import SimpleBoardGameView from '@/views/game/SimpleBoardGameView.vue'
 import Exercise1View from '@/views/exercise/Exercise1View.vue'
 
-import FileUploadView from "@/views/file/FileUploadView";
+import FileUploadView from "@/views/file/FileUploadView"
 
-import JpaBoardListView from "@/views/boards/JpaBoardListView";
-import JpaBoardRegisterView from "@/views/boards/JpaBoardRegisterView";
-import JpaBoardReadView from "@/views/boards/JpaBoardReadView";
-import JpaBoardModifyView from "@/views/boards/JpaBoardModifyView";
+import JpaBoardListView from "@/views/boards/JpaBoardListView"
+import JpaBoardRegisterView from "@/views/boards/JpaBoardRegisterView"
+import JpaBoardReadView from "@/views/boards/JpaBoardReadView"
+import JpaBoardModifyView from "@/views/boards/JpaBoardModifyView"
+
+import ProductListView from "@/views/products/ProductListView"
 
 Vue.use(VueRouter)
 
@@ -85,6 +87,13 @@ const routes = [
       default: true
     }
   },
+  {
+    path: '/product-list',
+    name: 'ProductListView',
+    component: ProductListView
+  },
+
+  
 ]
 
 const router = new VueRouter({
