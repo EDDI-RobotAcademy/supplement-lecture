@@ -76,4 +76,18 @@ public class StudentTest {
         student.setClassRoom(newClassRoom);
         studentRepository.save(student);
     }
+
+    @Test
+    void deleteStudent () {
+        Optional<Student> maybeStudent = studentRepository.findById(2L);
+
+        if (maybeStudent.isEmpty()) {
+            System.out.println("찾는 학생이 없습니다!");
+            return;
+        }
+
+        Student student = maybeStudent.get();
+        student.setClassRoom(null);
+        studentRepository.delete(student);
+    }
 }
