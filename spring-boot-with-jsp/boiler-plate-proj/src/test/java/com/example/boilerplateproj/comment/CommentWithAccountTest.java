@@ -2,6 +2,7 @@ package com.example.boilerplateproj.comment;
 
 import com.example.boilerplateproj.domain.jpa.account.entity.JpaAccount;
 import com.example.boilerplateproj.domain.jpa.account.repository.JpaAccountRepository;
+import com.example.boilerplateproj.domain.jpa.board.controller.response.CommentResponse;
 import com.example.boilerplateproj.domain.jpa.board.entity.JpaBoard;
 import com.example.boilerplateproj.domain.jpa.board.entity.JpaComment;
 import com.example.boilerplateproj.domain.jpa.board.repository.JpaBoardRepository;
@@ -10,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -87,5 +90,17 @@ public class CommentWithAccountTest {
                 commentRepository.save(comment);
             }
         }
+    }
+
+    @Test
+    void findCommentWhoWrite () {
+        List<JpaComment> commentList = commentRepository.findAllCommentsByJpaAccountId(2L);
+        List<CommentResponse> commentResponses = new ArrayList<>();
+
+        for (JpaComment comment : commentList) {
+            commentResponses.add(new CommentResponse(comment.getContent()));
+        }
+
+        System.out.println(commentResponses);
     }
 }
