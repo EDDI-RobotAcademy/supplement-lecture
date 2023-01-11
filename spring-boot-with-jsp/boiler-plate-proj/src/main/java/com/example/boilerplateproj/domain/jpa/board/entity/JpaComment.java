@@ -1,5 +1,7 @@
 package com.example.boilerplateproj.domain.jpa.board.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +9,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@AllArgsConstructor
+@Builder
 @NoArgsConstructor
 public class JpaComment {
 
@@ -18,7 +22,7 @@ public class JpaComment {
 
     private String content;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "jpa_board_id")
     private JpaBoard jpaBoard;
 

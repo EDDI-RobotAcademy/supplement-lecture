@@ -1,5 +1,7 @@
 package com.example.boilerplateproj.domain.jpa.board.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Data
 @Entity
+@AllArgsConstructor
+@Builder
 @NoArgsConstructor
 public class JpaBoard {
 
@@ -32,7 +36,7 @@ public class JpaBoard {
     @UpdateTimestamp
     private Date updDate;
 
-    @OneToMany(mappedBy = "jpaBoard", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "jpaBoard", fetch = FetchType.LAZY)
     private List<JpaComment> commentList = new ArrayList<>();
 
     public JpaBoard (String title, String writer, String content) {
