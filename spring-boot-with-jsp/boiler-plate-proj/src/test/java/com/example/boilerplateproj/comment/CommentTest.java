@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.comment;
 
+import com.example.boilerplateproj.domain.jpa.board.controller.response.CommentResponse;
 import com.example.boilerplateproj.domain.jpa.board.entity.JpaBoard;
 import com.example.boilerplateproj.domain.jpa.board.entity.JpaComment;
 import com.example.boilerplateproj.domain.jpa.board.repository.JpaBoardRepository;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -84,5 +87,17 @@ public class CommentTest {
                 .build();
 
         commentRepository.save(comment);
+    }
+
+    @Test
+    void findBoardComment () {
+        List<JpaComment> commentList = commentRepository.findAllCommentsByJpaBoardId(1L);
+        List<CommentResponse> commentResponses = new ArrayList<>();
+
+        for (JpaComment comment : commentList) {
+            commentResponses.add(new CommentResponse(comment.getContent()));
+        }
+
+        System.out.println(commentResponses);
     }
 }
