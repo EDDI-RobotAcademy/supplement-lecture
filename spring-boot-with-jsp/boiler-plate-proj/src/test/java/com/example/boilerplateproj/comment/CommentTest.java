@@ -100,4 +100,20 @@ public class CommentTest {
 
         System.out.println(commentResponses);
     }
+
+    @Test
+    void deleteBoardComments () {
+        commentRepository.deleteById(3L);
+    }
+
+    @Test
+    void deleteBoard () {
+        List<JpaComment> commentList = commentRepository.findAllCommentsByJpaBoardId(1L);
+
+        for (JpaComment comment : commentList) {
+            commentRepository.delete(comment);
+        }
+
+        boardRepository.deleteById(1L);
+    }
 }
