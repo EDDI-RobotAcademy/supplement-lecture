@@ -1,5 +1,6 @@
 package com.example.boilerplateproj.domain.jpa.board.entity;
 
+import com.example.boilerplateproj.domain.jpa.account.entity.JpaAccount;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,10 @@ public class JpaComment {
     @ManyToOne
     @JoinColumn(name = "jpa_board_id")
     private JpaBoard jpaBoard;
+
+    @OneToOne
+    @JoinColumn(name = "jpa_account_id")
+    private JpaAccount jpaAccount;
 
     public JpaComment (String content) {
         this.content = content;

@@ -116,4 +116,7 @@ public class CommentTest {
 
         boardRepository.deleteById(1L);
     }
+
+    // 회원 정보
+    // 댓글 작성자와 회원 정보를 연결시켜봅시다!
 }
