@@ -20,6 +20,7 @@ import ProductModifyView from "@/views/products/ProductModifyView"
 
 import CarouselView from "@/views/carousel/CarouselView"
 import ImageGalleryView from "@/views/gallery/ImageGalleryView"
+import DialogView from "@/views/dialog/DialogView"
 
 Vue.use(VueRouter)
 
@@ -132,6 +133,11 @@ const routes = [
     path: '/img-gallery-view',
     name: 'img-gallery-view',
     component: ImageGalleryView
+  },
+  {
+    path: '/dialog-view',
+    name: 'dialog-view',
+    component: DialogView
   },
 
   
