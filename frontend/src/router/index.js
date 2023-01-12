@@ -19,6 +19,7 @@ import ProductReadView from "@/views/products/ProductReadView"
 import ProductModifyView from "@/views/products/ProductModifyView"
 
 import CarouselView from "@/views/carousel/CarouselView"
+import ImageGalleryView from "@/views/gallery/ImageGalleryView"
 
 Vue.use(VueRouter)
 
@@ -126,6 +127,11 @@ const routes = [
     path: '/carousel-view',
     name: 'carousel-view',
     component: CarouselView
+  },
+  {
+    path: '/img-gallery-view',
+    name: 'img-gallery-view',
+    component: ImageGalleryView
   },
 
   

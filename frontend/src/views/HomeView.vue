@@ -12,6 +12,7 @@
         <router-link to="/board-list">Vue 게시판</router-link> |
         <router-link to="/product-list">상품 게시판</router-link> |
         <router-link to="/carousel-view">크로셀</router-link> |
+        <router-link to="/img-gallery-view">이미지 갤러리</router-link> |
       </nav>
       <router-view/>
     </div>
