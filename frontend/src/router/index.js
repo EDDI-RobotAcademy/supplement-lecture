@@ -18,6 +18,8 @@ import ProductRegisterView from "@/views/products/ProductRegisterView"
 import ProductReadView from "@/views/products/ProductReadView"
 import ProductModifyView from "@/views/products/ProductModifyView"
 
+import CarouselView from "@/views/carousel/CarouselView"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -119,6 +121,11 @@ const routes = [
     props: {
       default: true
     }
+  },
+  {
+    path: '/carousel-view',
+    name: 'carousel-view',
+    component: CarouselView
   },
 
   
