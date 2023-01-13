@@ -22,6 +22,7 @@ import CarouselView from "@/views/carousel/CarouselView"
 import ImageGalleryView from "@/views/gallery/ImageGalleryView"
 import DialogView from "@/views/dialog/DialogView"
 import NavigationView from "@/views/navigation/NavigationView"
+import TableView from "@/views/table/TableView"
 
 Vue.use(VueRouter)
 
@@ -144,6 +145,11 @@ const routes = [
     path: '/navigation-view',
     name: 'navigation-view',
     component: NavigationView
+  },
+  {
+    path: '/table-view',
+    name: 'table-view',
+    component: TableView
   },
 
   

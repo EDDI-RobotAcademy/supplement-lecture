@@ -13,6 +13,22 @@
                 </v-btn>
             </v-toolbar-items>
         </v-toolbar>
+        <v-navigation-drawer app v-model="navigation_drawer" temporary>
+            <v-list nav dense>
+                <v-list-item v-for="link in links" :key="link.name" router :to="link.route">
+                    <v-list-item-action>
+                        <v-icon left>
+                            {{  link.icon }}
+                        </v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{  link.text }}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
     </v-container>
 </template>
 
