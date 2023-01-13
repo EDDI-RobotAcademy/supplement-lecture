@@ -24,6 +24,8 @@ import DialogView from "@/views/dialog/DialogView"
 import NavigationView from "@/views/navigation/NavigationView"
 import TableView from "@/views/table/TableView"
 
+import Exercise2View from '@/views/exercise/Exercise2View.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -150,6 +152,11 @@ const routes = [
     path: '/table-view',
     name: 'table-view',
     component: TableView
+  },
+  {
+    path: '/exercise2',
+    name: 'exercise2',
+    component: Exercise2View
   },
 
   
