@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @Builder
+// 이 녀석을 사용하는 목적은 명시성이라 봐도 무방합니다.
+// builder를 이용해서 객체를 설정한다면
+// 해당 객체가 어떤 정보들을 어떤 이름으로 관리하는지 파악할 수 있습니다.
 @NoArgsConstructor
 public class JpaComment {
 
