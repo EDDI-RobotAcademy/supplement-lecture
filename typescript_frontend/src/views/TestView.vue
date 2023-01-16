@@ -1,18 +1,31 @@
 <template>
     <v-container>
-      <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+        <local-component :initial-value="num"/><br/>
+        <button @click="plus">클릭해봐!</button>
     </v-container>
-  </template>
-  
-  <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-  import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-  
-  @Component({
-    components: {
-      HelloWorld,
-    },
-  })
-  export default class HomeView extends Vue {}
-  </script>
-  
+</template>
+
+<script lang="ts">
+
+import { Vue } from 'vue-property-decorator';
+import LocalComponent from '@/components/LocalComponent.vue'
+
+export default Vue.extend({
+  name: 'Home',
+
+  components: {
+    LocalComponent,
+  },
+  data () {
+    return {
+        num: 0,
+    }
+  },
+  methods: {
+    plus () {
+        this.num++
+    }
+  }
+})
+
+</script>
