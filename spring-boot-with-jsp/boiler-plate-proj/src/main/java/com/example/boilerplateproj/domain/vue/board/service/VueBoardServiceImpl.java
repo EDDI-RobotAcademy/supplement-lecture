@@ -46,8 +46,15 @@ public class VueBoardServiceImpl implements VueBoardService {
     }
 
     @Override
-    public void modify(VueBoard board) {
+    public VueBoard modify(Long boardNo, VueBoardRequest boardRequest) {
+        VueBoard board = read(boardNo);
+
+        board.setTitle(boardRequest.getTitle());
+        board.setContent(boardRequest.getContent());
+
         repository.save(board);
+
+        return board;
     }
 
     @Override

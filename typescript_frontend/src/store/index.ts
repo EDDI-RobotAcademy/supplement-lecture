@@ -69,6 +69,18 @@ const store: StoreOptions<BoardState> = {
               alert('삭제 성공')
           })
     },
+    // eslint-disable-next-line no-empty-pattern
+    requestBoardModifyToSpring ({ }, payload) {
+      console.log('requestBoardModifyToSpring()')
+
+      const { title, content, boardNo, writer, regDate } = payload
+
+      return AxiosService.instance.put(`/39th/jpa/board/${boardNo}`,
+          { title, content, writer, regDate })
+          .then(() => {
+              alert('수정 성공')
+          })
+    },
   },
   modules: {
   }

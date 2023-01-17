@@ -65,12 +65,10 @@ public class VueBoardController {
     }
 
     @PutMapping("/{boardNo}")
-    public VueBoard boardModify (@PathVariable("boardNo") Long boardNo, @RequestBody VueBoard board) {
+    public VueBoard boardModify (@PathVariable("boardNo") Long boardNo,
+                                 @RequestBody VueBoardRequest boardRequest) {
         log.info("boardModify()");
 
-        board.setBoardNo(boardNo);
-        service.modify(board);
-
-        return board;
+        return service.modify(boardNo, boardRequest);
     }
 }

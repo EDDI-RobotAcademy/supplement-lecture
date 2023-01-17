@@ -28,8 +28,8 @@ import { Board } from '@/store'
 
 export default class BoardReadPage extends Vue {
 
-    @Prop() boardNo: number
-    @State readonly board: Board
+    @Prop() boardNo!: number
+    @State readonly board!: Board
     @Action readonly requestBoardToSpring: any
     @Action readonly requestDeleteBoardToSpring: any
 

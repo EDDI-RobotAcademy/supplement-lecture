@@ -20,16 +20,12 @@ import router from "@/router";
 export default class BoardList extends Vue {
     @Prop() private boards!: Board[]
 
-    data () {
-        return {
-            headerTitle: [
-                { text: '번호', value: 'boardNo', width: "70px" },
-                { text: '제목', value: 'title', width: "300px" },
-                { text: '작성자', value: 'writer', width: "100px" },
-                { text: '등록일자', value: 'regDate', width: "100px" },
-            ],
-        }
-    }
+    headerTitle = [
+        { text: '번호', value: 'boardNo', width: "70px" },
+        { text: '제목', value: 'title', width: "300px" },
+        { text: '작성자', value: 'writer', width: "100px" },
+        { text: '등록일자', value: 'regDate', width: "100px" },
+    ]
 
     readRow (value: Board) {
         alert('클릭하셨습니다!: ' + JSON.stringify(value))
