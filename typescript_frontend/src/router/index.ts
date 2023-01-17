@@ -9,12 +9,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'HomeView',
     component: HomeView
   },
   {
     path: '/about',
-    name: 'about',
+    name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -22,12 +22,12 @@ const routes = [
   },
   {
     path: '/test',
-    name: 'test',
+    name: 'TestView',
     component: TestView
   },
   {
     path: '/board-list',
-    name: 'board-list',
+    name: 'BoardListPage',
     component: BoardListPage
   },
 ]

@@ -1,8 +1,8 @@
 <template>
-    <v-container>
+    <v-container fluid>
         <h2>Vue + TypeScript + Spring + JPA Boards</h2>
         <router-link :to="{ name: 'BoardRegisterPage' }">
-        게시물 작성
+            게시물 작성
         </router-link>
         <board-list :boards="boards"/>
     </v-container>
