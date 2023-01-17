@@ -6,11 +6,6 @@
   </v-app>
 </template>
 
-<router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/test">Test</router-link> |
-      <router-link to="/board-list">게시판</router-link> |
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

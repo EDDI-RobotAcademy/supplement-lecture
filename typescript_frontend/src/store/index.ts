@@ -43,7 +43,7 @@ const store: StoreOptions<BoardState> = {
           commit(REQUEST_BOARD_LIST, res.data)
         })
     },
-    requestBoardList ({ commit }, boardNo: number) {
+    requestBoardToSpring ({ commit }, boardNo: number) {
       return AxiosService.instance.get(`/39th/jpa/board/${boardNo}`)
         .then((res) => {
           commit(REQUEST_BOARD, res.data)
@@ -59,7 +59,16 @@ const store: StoreOptions<BoardState> = {
           .then(() => {
               alert('게시물 등록 성공')
           })
-  },
+    },
+    // eslint-disable-next-line no-empty-pattern
+    requestDeleteBoardToSpring ({ }, boardNo) {
+      console.log('requestDeleteBoardToSpring()')
+
+      return AxiosService.instance.delete(`/39th/jpa/board/${boardNo}`)
+          .then(() => {
+              alert('삭제 성공')
+          })
+    },
   },
   modules: {
   }

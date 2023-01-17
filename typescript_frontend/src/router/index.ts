@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import TestView from '@/views/TestView.vue'
 import BoardListPage from '@/views/typescript/board/BoardListPage.vue'
 import BoardRegisterPage from '@/views/typescript/board/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/typescript/board/BoardReadPage.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,16 @@ const routes = [
     path: '/board-register',
     name: 'BoardRegisterPage',
     component: BoardRegisterPage
+  },
+  {
+    path: '/board-read/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
   },
 ]
 

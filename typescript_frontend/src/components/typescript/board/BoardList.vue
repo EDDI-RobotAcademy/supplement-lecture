@@ -34,7 +34,7 @@ export default class BoardList extends Vue {
     readRow (value: Board) {
         alert('클릭하셨습니다!: ' + JSON.stringify(value))
         router.push({
-            name: "JpaBoardReadView",
+            name: "BoardReadPage",
             params: { boardNo: value.boardNo.toString() }
         })
     }
