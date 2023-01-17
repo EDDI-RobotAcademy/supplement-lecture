@@ -29,7 +29,6 @@ export default class BoardModifyPage extends Vue {
     async onSubmit (payload: Board) {
         const { title, content, writer, regDate } = payload
         const boardNo = this.boardNo
-        
 
         await this.requestBoardModifyToSpring({ boardNo, title, content, writer, regDate })
         await this.$router.push({

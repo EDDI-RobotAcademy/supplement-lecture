@@ -18,7 +18,7 @@ import router from "@/router";
 
 @Component
 export default class BoardList extends Vue {
-    @Prop() private boards!: Board[]
+    @Prop() readonly boards!: Board[]
 
     headerTitle = [
         { text: '번호', value: 'boardNo', width: "70px" },
