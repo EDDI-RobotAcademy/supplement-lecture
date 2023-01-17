@@ -38,17 +38,28 @@ const store: StoreOptions<BoardState> = {
   },
   actions: {
     requestBoardListToSpring ({ commit }, boardNo: number) {
-      return AxiosService.instance.get('/ts/board/lists')
+      return AxiosService.instance.get('/39th/jpa/board/list')
         .then((res) => {
           commit(REQUEST_BOARD_LIST, res.data)
         })
     },
     requestBoardList ({ commit }, boardNo: number) {
-      return AxiosService.instance.get(`/ts/board/${boardNo}`)
+      return AxiosService.instance.get(`/39th/jpa/board/${boardNo}`)
         .then((res) => {
           commit(REQUEST_BOARD, res.data)
         })
-    }
+    },
+    // eslint-disable-next-line no-empty-pattern
+    requestCreateBoardContentsToSpring ({ }, payload) {
+      console.log('requestCreateBoardContentsToSpring()')
+
+      const { title, content, writer } = payload
+      return AxiosService.instance.post('/39th/jpa/board/register',
+          { title, content, writer })
+          .then(() => {
+              alert('게시물 등록 성공')
+          })
+  },
   },
   modules: {
   }
