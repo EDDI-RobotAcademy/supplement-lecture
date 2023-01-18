@@ -39,7 +39,7 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Board } from '@/store'
+import { Board } from '@/store/board/boardIndex'
 
 @Component
 export default class BoardRead extends Vue {

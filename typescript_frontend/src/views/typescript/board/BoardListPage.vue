@@ -13,7 +13,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { State, Action } from 'vuex-class'
 import BoardList from "@/components/typescript/board/BoardList.vue";
-import { Board } from '@/store'
+import { Board } from '@/store/board/boardIndex'
 
 @Component({
     components: {

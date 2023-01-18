@@ -2,24 +2,39 @@
   <v-container>
     <v-spacer></v-spacer>
     <v-layout row wrap>
-      <v-flex xs3 md3 class="teal white--text">
+      <v-flex xs2 md2 class="teal white--text">
         <router-link :to="{ name: 'HomeView' }">
           Home
         </router-link>
       </v-flex>
-      <v-flex xs3 md3 class="blue white--text">
+      <v-flex xs2 md2 class="blue white--text">
         <router-link :to="{ name: 'About' }">
           About
         </router-link>
       </v-flex>
-      <v-flex xs3 md3 class="orange white--text">
+      <v-flex xs1 md1 class="orange white--text">
         <router-link :to="{ name: 'TestView' }">
           Test
         </router-link>
       </v-flex>
-      <v-flex xs3 md3 class="red white--text">
+      <v-flex xs1 md1 class="red white--text">
         <router-link :to="{ name: 'BoardListPage' }">
           BoardListPage
+        </router-link>
+      </v-flex>
+      <v-flex xs2 md2 class="teal white--text">
+        <router-link :to="{ name: 'HomeView' }">
+          Home
+        </router-link>
+      </v-flex>
+      <v-flex xs2 md2 class="blue white--text">
+        <router-link :to="{ name: 'About' }">
+          About
+        </router-link>
+      </v-flex>
+      <v-flex xs2 md2 class="orange white--text">
+        <router-link :to="{ name: 'TestView' }">
+          Test
         </router-link>
       </v-flex>
     </v-layout>

@@ -13,7 +13,7 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Board } from '@/store'
+import { Board } from '@/store/board/boardIndex'
 import router from "@/router";
 
 @Component

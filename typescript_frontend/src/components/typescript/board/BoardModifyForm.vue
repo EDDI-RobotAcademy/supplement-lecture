@@ -50,7 +50,7 @@
 <script lang="ts">
 
 import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
-import { Board } from '@/store'
+import { Board } from '@/store/board/boardIndex'
 
 @Component
 export default class BoardModifyForm extends Vue {

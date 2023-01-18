@@ -18,7 +18,7 @@
 import BoardRead from "@/components/typescript/board/BoardRead.vue";
 import { Vue, Prop, Component } from 'vue-property-decorator'
 import { State, Action } from 'vuex-class'
-import { Board } from '@/store'
+import { Board } from '@/store/board/boardIndex'
 
 @Component ({
     components: {
