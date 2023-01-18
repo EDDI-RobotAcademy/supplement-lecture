@@ -1,13 +1,10 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { StoreOptions } from 'vuex'
 import AxiosService from '@/service'
 import {
   REQUEST_BOARD_LIST,
   REQUEST_BOARD
 } from '@/store/board/mutation-types'
-
-import { Module } from 'vuex'
-import { RootState } from '@/store/index'
 
 Vue.use(Vuex)
 
@@ -24,8 +21,7 @@ export interface BoardState {
   board: Board
 }
 
-export const moduleBoard: Module<BoardState, RootState> = {
-  namespaced: true,
+const BoardModule: StoreOptions<BoardState> = {
   state: {
     boards: [],
     board: { boardNo: 0, title: '', writer: '', content: '', regDate: '' }
@@ -89,3 +85,5 @@ export const moduleBoard: Module<BoardState, RootState> = {
   modules: {
   }
 }
+
+export default new Vuex.Store(BoardModule)

@@ -9,7 +9,7 @@
 <script lang="ts">
 
 import BoardModifyForm from "@/components/typescript/board/BoardModifyForm.vue";
-import { Board } from "@/store/board/boardIndex";
+import { Board } from "@/store/board/BoardModule";
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { State, Action } from "vuex-class";
 
