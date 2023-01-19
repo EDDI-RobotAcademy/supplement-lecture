@@ -22,7 +22,8 @@ export default class BoardRegisterPage extends Vue {
     @Action readonly requestCreateBoardContentsToSpring: any
 
     async onSubmit (payload: Board) {
-        await this.requestCreateBoardContentsToSpring(payload)
+        //await this.requestCreateBoardContentsToSpring(payload)
+        await this.$store.dispatch('BoardModule/requestCreateBoardContentsToSpring', payload)
         await this.$router.push({
             name: 'BoardListPage'
         })
