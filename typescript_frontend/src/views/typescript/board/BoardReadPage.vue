@@ -38,7 +38,8 @@ export default class BoardReadPage extends Vue {
     }
 
     async onDelete () {
-        await this.requestDeleteBoardToSpring(this.boardNo);
+        //await this.requestDeleteBoardToSpring(this.boardNo);
+        await this.$store.dispatch('BoardModule/requestDeleteBoardToSpring', [this.boardNo])
         await this.$router.push({ name: 'BoardListPage' })
     }
 
