@@ -11,7 +11,7 @@
 <script lang="ts">
 
 import { Component, Vue } from "vue-property-decorator";
-import { State } from 'vuex-class'
+import { State, Action } from 'vuex-class'
 import BoardList from "@/components/typescript/board/BoardList.vue";
 import { Board } from '@/store/board/BoardModule'
 
@@ -23,7 +23,7 @@ import { Board } from '@/store/board/BoardModule'
 
 export default class BoardListPage extends Vue {
     @State readonly boards!: Board[]
-    //@Action readonly requestBoardListToSpring: any
+    @Action readonly requestBoardListToSpring!: any;
 
     get moduleStore () {
         return this.$store.state.BoardModule
