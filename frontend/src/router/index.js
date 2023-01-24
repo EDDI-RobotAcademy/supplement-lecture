@@ -26,6 +26,9 @@ import TableView from "@/views/table/TableView"
 
 import Exercise2View from '@/views/exercise/Exercise2View.vue'
 
+import SignUpView from "@/views/account/SignUpView";
+import SignInView from "@/views/account/SignInView";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -157,6 +160,16 @@ const routes = [
     path: '/exercise2',
     name: 'exercise2',
     component: Exercise2View
+  },
+  {
+    path: '/sign-up',
+    name: 'SignUpView',
+    component: SignUpView
+  },
+  {
+    path: '/sign-in',
+    name: 'SignInView',
+    component: SignInView
   },
 
   

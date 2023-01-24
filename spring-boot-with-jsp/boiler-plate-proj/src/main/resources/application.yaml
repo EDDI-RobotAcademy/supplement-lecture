@@ -15,8 +15,9 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:orcl
     #url: jdbc:mysql://localhost:3306/jpa_test_db?allowpublickeyretrieval=true&usessl=false&serverTimezone=UTC
+    #url: jdbc:mysql://localhost:3306/lecture_support?allowpublickeyretrieval=true&usessl=false&serverTimezone=UTC
     #username: eddi
-    #password: eddi123
+    #password: eddi@123
     username: scott
     password: tiger
     driver-class-name: oracle.jdbc.OracleDriver
@@ -32,8 +33,8 @@ spring:
     generate-ddl: true
     database-platform: org.hibernate.dialect.Oracle10gDialect
     hibernate:
-      ddl-auto: update
-      #ddl-auto: create
+      #ddl-auto: update
+      ddl-auto: create
 
   servlet:
     multipart:

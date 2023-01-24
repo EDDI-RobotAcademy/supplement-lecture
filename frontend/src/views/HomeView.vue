@@ -17,6 +17,8 @@
         <router-link to="/navigation-view">네비뷰</router-link> |
         <router-link to="/table-view">테이블뷰</router-link> |
         <router-link to="/exercise2">연습 문제 2</router-link> |
+        <router-link to="/sign-up">회원 가입</router-link> |
+        <router-link to="/sign-in">로그인</router-link> |
       </nav>
       <router-view/>
     </div>
