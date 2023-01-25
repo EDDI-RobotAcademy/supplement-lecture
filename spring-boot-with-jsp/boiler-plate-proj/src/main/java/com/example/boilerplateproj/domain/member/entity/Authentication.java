@@ -17,7 +17,8 @@ public abstract class Authentication {
 
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "authentication_seq_gen")
+    @SequenceGenerator(sequenceName = "authentication_seq", name = "authentication_seq_gen", allocationSize = 1)
     private Long id = null;
 
     @ManyToOne(fetch = FetchType.LAZY)

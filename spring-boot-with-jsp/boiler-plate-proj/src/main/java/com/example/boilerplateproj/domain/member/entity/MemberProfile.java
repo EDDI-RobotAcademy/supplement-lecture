@@ -11,7 +11,8 @@ import javax.persistence.*;
 public class MemberProfile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mem_profile_seq_gen")
+    @SequenceGenerator(sequenceName = "mem_profile_seq", name = "mem_profile_seq_gen", allocationSize = 1)
     private Long id = null;
 
     @Embedded

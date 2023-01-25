@@ -14,7 +14,8 @@ public class Member {
 
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_gen")
+    @SequenceGenerator(sequenceName = "member_seq", name = "member_seq_gen", allocationSize = 1)
     private Long id;
 
     @Getter
