@@ -1,0 +1,15 @@
+﻿fastapi
+sqlalchemy
+pydantic
+pydantic[email]
+python-dotenv
+python-jose
+uvicorn
+passlib
+bcrypt
+python-multipart
+psycopg2
+alembic
+django-cbv
+schemas
+dependencies
